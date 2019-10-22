@@ -64,6 +64,7 @@ export const Img: React.FC<Props> = props => {
 		>
 			<img
 				id={'img'}
+				alt="Gallery-Image"
 				src={url}
 				style={{ opacity: 0.5, transition: '0.5s opacity' }}
 				onLoad={e => {

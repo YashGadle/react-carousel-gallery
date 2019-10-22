@@ -4,9 +4,14 @@
 	"main": "dist/index.js",
 	"module": "dist/react-carousel-gallery.esm.js",
 	"typings": "dist/index.d.ts",
+	"license": "MIT",
 	"files": [
 		"dist"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YashGadle/react-carousel-gallery"
+	},
 	"scripts": {
 		"start": "tsdx watch",
 		"build": "tsdx build",
@@ -18,7 +23,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "tsdx lint"
+			"pre-commit": "yarn test"
 		}
 	},
 	"prettier": {
