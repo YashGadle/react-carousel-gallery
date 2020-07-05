@@ -17,27 +17,28 @@ export const Img: React.FC<Props> = props => {
 		const observer = new IntersectionObserver(
 			entries => {
 				entries.forEach(entry => {
-					// console.log(entry);
-					const x = document.getElementById(
-						'image-container-' + index
-					);
-					if (entry.isIntersecting) {
-						img.style.opacity = '1';
-						// if (img.naturalWidth > img.naturalHeight)
-						// 	x.style.width = '800px';
-						// else x.style.height = '650px';
-						if (img.naturalWidth < img.naturalHeight)
-							x.style.transform = 'scale(1)';
-						else x.style.transform = 'scale(1.2)';
-					} else {
-						img.style.opacity = '0.5';
-						// if (img.naturalWidth > img.naturalHeight)
-						// 	x.style.width = '600px';
-						// else x.style.height = '600px';
-						if (img.naturalWidth < img.naturalHeight)
-							x.style.transform = 'scale(0.8)';
-						else x.style.transform = 'scale(0.9)';
-					}
+					console.log(entry);
+					// const x = document.getElementById(
+					// 	'image-container-' + index
+					// );
+					// console.log(x);
+					// if (entry.isIntersecting) {
+					// 	img.style.opacity = '1';
+					// 	// if (img.naturalWidth > img.naturalHeight)
+					// 	// 	x.style.width = '800px';
+					// 	// else x.style.height = '650px';
+					// 	if (img.naturalWidth < img.naturalHeight)
+					// 		x.style.transform = 'scale(1)';
+					// 	else x.style.transform = 'scale(1.2)';
+					// } else {
+					// 	img.style.opacity = '0.5';
+					// 	// if (img.naturalWidth > img.naturalHeight)
+					// 	// 	x.style.width = '600px';
+					// 	// else x.style.height = '600px';
+					// 	if (img.naturalWidth < img.naturalHeight)
+					// 		x.style.transform = 'scale(0.8)';
+					// 	else x.style.transform = 'scale(0.9)';
+					// }
 				});
 			},
 			{
@@ -58,15 +59,18 @@ export const Img: React.FC<Props> = props => {
 				'carousel-image-landscape': imageType === 'landscape',
 			})}
 			style={{
-				width: imageType === 'landscape' ? width : 'fit-content',
-				height: imageType === 'portrait' ? height : 'fit-content',
+				width: imageType === 'landscape' ? width : '',
+				height: imageType === 'portrait' ? height : '',
 			}}
 		>
 			<img
 				id={'img'}
 				alt="Gallery-Image"
 				src={url}
-				style={{ opacity: 0.5, transition: '0.5s opacity' }}
+				style={{
+					opacity: 0.5, transition: '0.5s opacity',
+					width: imageType === 'landscape' ? '100%' : 'fit-content',
+					height: imageType === 'portrait' ? '100%' : 'fit-content',}}
 				onLoad={e => {
 					const {
 						naturalHeight,
