@@ -17,11 +17,11 @@ import '../src/styles.css';
 const images = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const App = () => {
-  return (
-    <div>
-			<Carousel images={images} imageHeight="600px" imageWidth="600px"/>
-    </div>
-  );
+	return (
+		<div style={{ maxHeight: '100vh' }}>
+			<Carousel images={images} imageHeight="800px" imageWidth="600px" />
+		</div>
+	);
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));

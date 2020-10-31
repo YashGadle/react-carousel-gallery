@@ -23,7 +23,20 @@ export const Carousel: React.FC<Props> = props => {
 	}, []);
 
 	return support ? (
-		<div id="carousel" className="Carousel">
+		<div
+			id="carousel"
+			style={{
+				position: 'relative',
+				display: 'flex',
+				height: '100%',
+				alignItems: 'center',
+				overflowX: 'scroll',
+				scrollSnapType: 'x mandatory',
+				padding: '2rem 0',
+				scrollBehavior: 'smooth',
+				scrollbarColor: 'transparent',
+			}}
+		>
 			{[null, ...images, null].map((image, index) =>
 				image ? (
 					<Img
